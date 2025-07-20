@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Recipes-List-App/static/css/main.17368832.css",
-    "main.js": "/Recipes-List-App/static/js/main.12cf1e58.js",
+    "main.css": "/Recipes-List-App/static/css/main.5716e3f4.css",
+    "main.js": "/Recipes-List-App/static/js/main.01713612.js",
     "static/js/453.5943b69b.chunk.js": "/Recipes-List-App/static/js/453.5943b69b.chunk.js",
     "index.html": "/Recipes-List-App/index.html",
-    "main.17368832.css.map": "/Recipes-List-App/static/css/main.17368832.css.map",
-    "main.12cf1e58.js.map": "/Recipes-List-App/static/js/main.12cf1e58.js.map",
+    "main.5716e3f4.css.map": "/Recipes-List-App/static/css/main.5716e3f4.css.map",
+    "main.01713612.js.map": "/Recipes-List-App/static/js/main.01713612.js.map",
     "453.5943b69b.chunk.js.map": "/Recipes-List-App/static/js/453.5943b69b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17368832.css",
-    "static/js/main.12cf1e58.js"
+    "static/css/main.5716e3f4.css",
+    "static/js/main.01713612.js"
   ]
 }
