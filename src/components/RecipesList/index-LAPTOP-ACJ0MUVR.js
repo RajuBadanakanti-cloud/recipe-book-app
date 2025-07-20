@@ -7,7 +7,7 @@ import Header from '../Header'
 import './index.css'
 
 const RecipesList = () => {
-    const {recipesList,handleDeleteRecipe, setRecipesList} = useContext(UserContext) // Context Recipes Data        
+    const {recipesList,handleDeleteRecipe, setRecipesList} = useContext(UserContext) // Context Recipes Data 
     const [searchInputValue, setsearchInputValue] = useState("") // search Input Value
     const [newRecipeName,setNewRecipeName] = useState("") // adding new recipe name
     const [newRecipeIngredients,setNewRecipeIngredients] = useState("") // adding new recipe ingredients

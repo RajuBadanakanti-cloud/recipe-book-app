@@ -1,4 +1,5 @@
 .recipe-detailed-bg-container{
+    background-image:linear-gradient(to top, #e2c78d, #f3e444,#f0c785); 
     min-height:100vh;
     width:100%;
     display:flex;
@@ -34,14 +35,17 @@
     margin-bottom:20px;
 }
 .recipe-image{
-    width:60%;
+    width:55%;
     border:none;
     border-radius:10px;
 }
 /* Recipe Ingredients List Container   */
 .recipe-ingredients-list-container{
+    background-color: #e2c78d;
+    border:none;
+    border-radius:10px;
     margin:0;
-    padding:0;
+    padding:10px;
     margin-left:40px;
 }
 .ingredients-list-items{
@@ -54,10 +58,18 @@
     font-family:Arial;
     font-size:26px;
 }
+
 /* Recipe Steps List Container   */
 .recipe-steps-list-container{
+    width:85%;
+    background-color: #e2c78d;
+    border:none;
+    border-radius:6px;
     margin:0;
-    padding:0;
+    padding-top:20px;
+    padding-bottom:10px;
+    padding-left:20px;
+    padding-right:10px;
     margin-left:40px;
     margin-bottom:10px;
 }

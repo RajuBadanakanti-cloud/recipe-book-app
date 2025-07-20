@@ -204,10 +204,10 @@ const userData =
 export const UserContextProvider = ({children}) => {
 const [recipesList, setRecipesList] = useState(() => {
     const stored = JSON.parse(localStorage.getItem("recipes"));
-    return stored.length > 0 ? stored: userData;
+    return stored && stored.length > 0 ? stored : userData;
   });
 
- if (recipesList.lenght === 0){
+ if (recipesList.length === 0){
   localStorage.setItem("recipes", JSON.stringify(userData));
   setRecipesList(userData)
 
