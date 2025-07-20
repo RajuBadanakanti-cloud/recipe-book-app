@@ -1,0 +1,34 @@
+.header-navbar-container{
+    height:100px;
+    width:100%;
+    background: linear-gradient(to left, #fefcea,#edbc28, #9d6306);
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    /* Navbar fixing on top */
+    position:fixed;
+    top:0;
+    left:0;
+    
+}
+.nav-website-logo-button{
+    border:none;
+    background-color:transparent;
+    outline:none;
+    cursor: pointer;
+    height:90px;
+    width:90px;
+    margin-left:50px;
+}
+.nav-webiste-img{
+  height:94px;
+  width:95px;
+  border-radius:40px;
+  margin:0;
+}
+.header-text{
+  color:#080800;
+  font-size:30px;
+  margin-right:50px;
+}

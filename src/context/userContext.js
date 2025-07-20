@@ -1,7 +1,7 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-# from chatGpt JSON Data for Recipes:
+import React, { useState,useEffect } from "react"
+export const UserContext = React.createContext()
+// JSON USER DATA
+const userData =
 [
   {
     "id": "1",
@@ -21,7 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Drain pasta and mix immediately with pancetta and egg-cheese mixture.",
       "Stir quickly to create a creamy sauce. Season with salt and pepper."
     ],
-    "imageUrl": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/4518833/pexels-photo-4518833.jpeg"
   },
   {
     "id": "2",
@@ -43,7 +43,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Add cream and butter. Simmer until thick and creamy.",
       "Garnish with coriander leaves and serve with naan or rice."
     ],
-    "imageUrl": "https://images.pexels.com/photos/11113133/pexels-photo-11113133.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg"
   },
   {
     "id": "3",
@@ -63,7 +63,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Drizzle with olive oil and sprinkle salt.",
       "Bake for 10–12 minutes until crust is golden."
     ],
-    "imageUrl": "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/5280912/pexels-photo-5280912.jpeg"
   },
   {
     "id": "4",
@@ -84,7 +84,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Layer chicken and rice, sprinkle saffron, mint, and coriander.",
       "Cover and cook on low flame for 20 minutes."
     ],
-    "imageUrl": "https://images.pexels.com/photos/5908383/pexels-photo-5908383.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/28674660/pexels-photo-28674660.jpeg"
   },
   {
     "id": "5",
@@ -122,7 +122,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Grill or bake at 200°C for 15 minutes, flipping halfway.",
       "Serve with mint chutney."
     ],
-    "imageUrl": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/3928854/pexels-photo-3928854.png"
   },
   {
     "id": "7",
@@ -143,7 +143,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Add noodles and stir-fry on high heat.",
       "Serve hot with spring onions on top."
     ],
-    "imageUrl": "https://images.pexels.com/photos/128388/pexels-photo-128388.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg"
   },
   {
     "id": "8",
@@ -160,7 +160,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Pour eggs and stir gently until partially set.",
       "Fold and slide onto plate. Garnish with herbs."
     ],
-    "imageUrl": "https://images.pexels.com/photos/5710704/pexels-photo-5710704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/31667179/pexels-photo-31667179.jpeg"
   },
   {
     "id": "9",
@@ -179,7 +179,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Cook pancakes on greased pan until golden.",
       "Stack pancakes, top with berries and syrup."
     ],
-    "imageUrl": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/2732663/pexels-photo-2732663.jpeg"
   },
   {
     "id": "10",
@@ -196,74 +196,35 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       "Drizzle Caesar dressing and toss well.",
       "Top with grated parmesan and pepper."
     ],
-    "imageUrl": "https://images.pexels.com/photos/6287768/pexels-photo-6287768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1440"
+    "imageUrl": "https://images.pexels.com/photos/15813486/pexels-photo-15813486.jpeg"
   }
+  /* ,,,,,,,,,,,,,*/
 ]
 
+export const UserContextProvider = ({children}) => {
+const [recipesList, setRecipesList] = useState(() => {
+    const stored = JSON.parse(localStorage.getItem("recipes"));
+    return stored.length === 0 ? userData: stored
+  });
 
-## Available Scripts
+ if (recipesList.lenght === 0){
+  localStorage.setItem("recipes", JSON.stringify(userData));
+  setRecipesList(userData)
 
-In the project directory, you can run:
+ }
 
-### `npm start`
+  // Save to localStorage when recipes change
+  useEffect(() => {
+    localStorage.setItem("recipes", JSON.stringify(recipesList));
+  }, [recipesList]);
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
+  const handleDeleteRecipe = (id) => {
+    const updatedRecipesList = recipesList.filter(each => each.id !== id)
+    setRecipesList(updatedRecipesList)
+    localStorage.setItem("recipes",JSON.stringify(updatedRecipesList))
+  }
+    return (<UserContext.Provider value={{recipesList,handleDeleteRecipe,setRecipesList}}>
+        {children}
+    </UserContext.Provider>)
+}

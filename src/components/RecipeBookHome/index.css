@@ -1,0 +1,72 @@
+
+*body{
+    margin:0;
+}
+.home-recipe-book-bg-container{
+    min-height:110vh;
+    width:100%;
+    background-image:url("https://res.cloudinary.com/dnh9hnjbx/image/upload/v1751964316/Rj_food_login_page_ChatGPT_Image_Jul_8_2025_02_13_20_PM_qurhj8.png");
+    background-size:cover;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;
+}
+.home-recipe-content-container{
+    background-color:#f9f5f5;
+    background-color: #035327;
+    width:45%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-right:40px;
+    min-height:300px;
+    padding-top:20px;
+    padding-left:25px;
+    padding-right:25px;
+    padding-bottom:30px;
+    border:none;
+    border-radius:10px;
+    text-align:center;
+}
+.view-recipes-button{
+    height:45px;
+    width:140px;
+    background-color:#ffb300;
+    color:#ffffff;
+    border:none;
+    border-radius:6px;
+    cursor: pointer;
+    padding:5px;
+    margin-top:20px;
+    font-family:cursive;
+    font-size:14px;
+    font-weight:bold;
+    outline: none;
+     margin-bottom:30px;
+}
+.home-website-logo-img{
+    width:60%;
+    border-radius:10px;
+}
+.home-heading{
+    color:#ffffff;
+    font-size:28px;
+    font-family:Arial;
+
+}
+.home-heading-span-text{
+    color:#fdd985;;
+}
+.home-paras-description{
+    color:#f8f5c1;
+    font-size:14px;
+}
+
+.home-description{
+     width:95%;
+    color:#ffffff;
+    font-size:14px;
+}
