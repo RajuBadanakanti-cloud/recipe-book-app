@@ -203,22 +203,26 @@ const userData =
 
 export const UserContextProvider = ({children}) => {
 const [recipesList, setRecipesList] = useState(() => {
-    const stored = JSON.parse(localStorage.getItem("recipes"));
-    return stored && stored.length > 0 ? stored: userData;
+    const stored = localStorage.getItem("recipes");
+    return stored ? JSON.parse(stored) : userData;
   });
 
- if (recipesList.length === 0){
-  localStorage.setItem("recipes", JSON.stringify(userData));
-  setRecipesList(userData)
-
- }
-
-  // Save to localStorage when recipes change
+  // ✅ Save recipes to localStorage when they change
   useEffect(() => {
     localStorage.setItem("recipes", JSON.stringify(recipesList));
   }, [recipesList]);
 
-  
+
+  // ✅ Run once: initialize localStorage if empty
+  useEffect(() => {
+    const stored = localStorage.getItem("recipes");
+    if (!stored || JSON.parse(stored).length === 0) {
+      localStorage.setItem("recipes", JSON.stringify(userData));
+      setRecipesList(userData);
+    }
+  }, []);
+
+
   const handleDeleteRecipe = (id) => {
     const updatedRecipesList = recipesList.filter(each => each.id !== id)
     setRecipesList(updatedRecipesList)
