@@ -25,17 +25,22 @@ const RecipeDetailedView = () => {
         <div className="recipe-detailed-bg-container">
             <div className="recipe-detailed-content">
                 <h1 className="recipe-detailed-name">{name}</h1>
-                  <div className="recipe-image-ingredients-container">
-                     <img src={imageUrl} className="recipe-image" alt={name}/>
+                        <div className="recipe-image-view-container">
+                            <img src={imageUrl} className="recipe-image" alt={name}/>
+                        </div>
+                        <hr/>
+                     <div className="recipe-ingredients-steps-view-container">
+                     {/*Ingredient section*/}
                      <ul className="recipe-ingredients-list-container">
                         <h1 className="ingredients-heading">Ingredients: </h1>
                         {ingredients.map(each => <li  key={each} className="ingredients-list-items">{each}</li>)}
                      </ul>
-                  </div>
-                    <h1 className="steps-heading">Steps: </h1>
+                     {/*Preparation Steps section*/}
                     <ul className="recipe-steps-list-container">
+                    <h1 className="steps-heading">Steps: </h1>
                         {steps.map(each => <li key={each} className="steps-list-items">{each}</li>)}
                      </ul>
+                    </div>
                      <button type="button" onClick={onRecipesBackButton} className="back-button">Back</button>
             </div>
         </div>

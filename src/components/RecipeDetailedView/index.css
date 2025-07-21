@@ -1,6 +1,7 @@
 .recipe-detailed-bg-container{
     min-height:100vh;
     width:100%;
+    background-image:linear-gradient(to top, #faefb0, #fbd795,#faeaa5); 
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
@@ -8,16 +9,19 @@
     margin-top:100px;
 }
 .recipe-detailed-content{
-    width:94%;
-    background-image:linear-gradient(to bottom, #fdf7d6, #f8f2a8); 
+    width:75%;
+    background-image:linear-gradient(to bottom, #f6c83f7e, #ecd47f); 
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    align-items:flex-start;
-    margin-top:20px;
+    align-items:center;
+    margin-top:30px;
     margin-bottom:20px;
-    padding:25px;
     border-radius:10px;
+    padding-top:30px;
+    padding-bottom:30px ;
+    padding-left:40px;
+    padding-right: 40px;
 }
 .recipe-detailed-name{
     font-family:cursive;
@@ -25,24 +29,44 @@
     color:#2c291b;
     
 }
-.recipe-image-ingredients-container{
+
+.recipe-image-view-container{
     width:100%;
     display:flex;
-    flex-direction:row;
-    justify-content:flex-start;
-    align-items:flex-start;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     margin-bottom:20px;
 }
 .recipe-image{
-    width:60%;
+    width:100%;
     border:none;
     border-radius:10px;
 }
+
+/* image/ingredients/steps  */
+.recipe-ingredients-steps-view-container{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:flex-start;
+    margin-top:30px;
+    margin-bottom:25px;
+}
+
 /* Recipe Ingredients List Container   */
 .recipe-ingredients-list-container{
+    width:30%;
     margin:0;
     padding:0;
-    margin-left:40px;
+    background-color:#fae48b;
+    border:none;
+    border-radius:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left: 20px;
+    padding-right: 30px; 
 }
 .ingredients-list-items{
     margin-left:25px;
@@ -56,30 +80,42 @@
 }
 /* Recipe Steps List Container   */
 .recipe-steps-list-container{
+    width:60%;
     margin:0;
     padding:0;
     margin-left:40px;
     margin-bottom:10px;
+    background-color:#fee583;
+    border:none;
+    border-radius:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left: 20px;
+    padding-right: 40px; 
 }
 .steps-list-items{
     margin-left:20px;
     margin-bottom:14px;
     font-family: Helvetica;
-    font-size:18px;
+    font-size:16px;
 }
 .steps-heading{
     font-family:Arial;
     font-size:28px;
-    margin-bottom:30px;
+    margin-bottom:22px;
 }
 /* <<<<<<<<<<< BACK BUTTON  */
 .back-button{
     margin-left:auto;
     height:35px;
     width:80px;
-    background-color:#010124;
+    background-color:#010127d5;
     color:#fffaf8;
     border:none;
     border-radius:4px;
     cursor: pointer;
+    transition: background-color 0.3 ease;
+}
+.back-button:hover{
+   background-color:#010127;
 }
