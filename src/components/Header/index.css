@@ -19,8 +19,8 @@
     background-color:transparent;
     outline:none;
     cursor: pointer;
-    height:60px;
-    width:60px;
+    height:62px;
+    width:62px;
     margin-left:25px;
     display:flex;
     flex-direction:column;
@@ -28,13 +28,13 @@
     align-items: center;
 }
 .nav-webiste-img{
-  height:60px;
-  width:60px;
+  height:62px;
+  width:62px;
   margin:0;
 }
 .header-text{
   color:#080800;
-  font-size:20px;
+  font-size:22px;
   margin-right:50px;
 }
 
