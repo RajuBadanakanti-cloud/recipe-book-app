@@ -1,3 +1,131 @@
+/****************************** SMALL DEVICES VIEW  *********************************************** */
+
+.recipe-detailed-bg-container{
+    min-height:100vh;
+    width:100%;
+    background-image:linear-gradient(to top, #faefb0, #fbd795,#faeaa5); 
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    margin-top:80px;
+}
+.recipe-detailed-content{
+    width:75%;
+    background-image:linear-gradient(to bottom, #f6c83f7e, #ecd47f); 
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:30px;
+    margin-bottom:20px;
+    border-radius:10px;
+    padding-top:25px;
+    padding-bottom:25px ;
+    padding-left:30px;
+    padding-right:30px;
+}
+.recipe-detailed-name{
+    font-family:cursive;
+    font-size:25px;
+    color:#2c291b;
+    
+}
+
+.recipe-image-view-container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+.recipe-image{
+    width:90%;
+    border:none;
+    border-radius:10px;
+}
+
+/* image/ingredients/steps  */
+.recipe-ingredients-steps-view-container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:25px;
+    margin-bottom:20px;
+}
+
+/* Recipe Ingredients List Container   */
+.recipe-ingredients-list-container{
+    width:90%;
+    margin:0;
+    padding:0;
+    background-color:#fae48b;
+    border:none;
+    border-radius:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left: 20px;
+    padding-right: 30px; 
+}
+.ingredients-list-items{
+    margin-left:15px;
+    margin-bottom:14px;
+    font-family: Helvetica;
+    font-size:12px;
+}
+.ingredients-heading{
+    font-family:Arial;
+    font-size:20px;
+}
+/* Recipe Steps List Container   */
+.recipe-steps-list-container{
+    width:90%;
+    margin:0;
+    padding:0;
+    margin-top:20px;
+    margin-bottom:10px;
+    background-color:#fee583;
+    border:none;
+    border-radius:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left: 20px;
+    padding-right: 40px; 
+}
+.steps-list-items{
+    margin-left:20px;
+    margin-bottom:14px;
+    font-family: Helvetica;
+    font-size:12px;
+}
+.steps-heading{
+    font-family:Arial;
+    font-size:20px;
+    margin-bottom:22px;
+}
+/* <<<<<<<<<<< BACK BUTTON  */
+.back-button{
+    margin-left:auto;
+    height:32px;
+    width:80px;
+    background-color:#010127d5;
+    color:#fffaf8;
+    border:none;
+    border-radius:4px;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+}
+.back-button:hover{
+   background-color:#010127;
+}
+
+
+/****************************** MEDIUM/LARGE DEVICES VIEW  *********************************************** */
+
+@media screen and (min-width:760px){
 .recipe-detailed-bg-container{
     min-height:100vh;
     width:100%;
@@ -119,3 +247,6 @@
 .back-button:hover{
    background-color:#010127;
 }
+  
+}
+

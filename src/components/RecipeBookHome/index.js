@@ -10,7 +10,7 @@ const RecipeBookHome = () => {
     return(
         <div className='home-recipe-book-bg-container'>
             <div className='home-recipe-content-container'>
-                <img src="https://res.cloudinary.com/dnh9hnjbx/image/upload/v1752128598/myRecipe_Book_Logo_dr2k0a_44fa79.png"
+                <img src="https://res.cloudinary.com/dnh9hnjbx/image/upload/v1752324867/craiyon_182217_image_a1hatu.png"
                  alt="website logo"
                  className='home-website-logo-img'/>
                 <h1 className='home-heading'>Flavors of Home: Your <span className='home-heading-span-text'>Ultimate Recipe </span>Collection</h1>

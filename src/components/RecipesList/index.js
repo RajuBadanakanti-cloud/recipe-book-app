@@ -22,7 +22,7 @@ const RecipesList = () => {
         setsearchInputValue(event.target.value)
     }
     const searchingRecipe = recipesList.filter(each => each.name.toLowerCase().includes(searchInputValue.toLowerCase()))
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // on Adding NewRecipe Name
     const onAddingNewRecipeName = (event) =>{
         setNewRecipeName(event.target.value)
@@ -42,8 +42,7 @@ const RecipesList = () => {
         setNewRecipeImgURL(event.target.value)
     }
 
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-// ADD BUTTON
+// Action on Add Button
 const onAddNewRecipeBtn = () => {
     if(newRecipeName.trim() === "" || newRecipeIngredients.trim() === "" || newRecipeSteps.trim() === "" ){
       alert("ENTER VALID DETAILS")
@@ -60,7 +59,7 @@ const onAddNewRecipeBtn = () => {
         setIsAddNewRecipe(true)
     }
 }
-    // SUBMITING FORM DATA 
+    //  Submiting Form Data
     const onSubmitAddForm = (event) => {
         event.preventDefault()
      
@@ -78,8 +77,8 @@ const onAddNewRecipeBtn = () => {
 
     }
 
-    // SAVE INTO LOCALSTORAGE USE EFFECT >>>>>>>>> 
-// ON DELETE RECIPE ITEM CONTENT
+   
+// ON DELETE RECIPE ITEM AND POPUP CONTENT 
 const [isShownPopup,setIsShownPopup] = useState(false)
 const [deletingId,setDeletingId] = useState("")
 const[deletingItemName, setDeletingItemName] = useState("")
@@ -90,77 +89,84 @@ const onDeleteButtonClick = (id,name) => {
     setDeletingId(id) 
 }
 
-// NO DELETE BUTTON
+// ---- No Delete Button
 const onDeleteNoBtn = () => {
     setIsShownPopup(false)
     setDeletingId("")
 }
 
-// **** YES DELETE BUTTON
+// ++++ Yes Delete Button
 const onDeleteYesBtn = () => {
    handleDeleteRecipe(deletingId)
    setIsShownPopup(false)
 }
 
+// EMPTY RECIPE LIST VIEW
+const renderEmptyRecipesView = () =>  (
+<div className='empty-recipes-bg-container'>
+    <h1 className='empty-recipe-list-heading'>RECIPES EMPTY</h1>
+    <p >Add your Recipes</p>
+</div>
+)
 
+// NON-EMPTY RECIPE LIST VIEW >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  const renderNonRecipesListView = () => (
+    <div className='recipes-list-section-container'>
+        <div className='recipes-header-and-search-container'>
+            <h1 className='recipes-list-header'>RECIPES LIST</h1>
+            {/*  SEARCH CONTENT */}
+            <div className='search-icon-input-container'>
+                <input type='search' value={searchInputValue}
+                onChange={onSearchInput}
+                className='search-input'
+                placeholder='Search Recipe (e.g. Chicken Biryani)'/>
+                <MdContentPasteSearch className='search-icon' />
+             </div>
+        </div>
+        <hr className='line'/>
+        {/* DELETE CONFORM POPUP */}
+        {isShownPopup && (
+            <div className='delete-confirm-popup-container'>
+                <h1 className='delete-confirm-question'>Are you confirm delete this recipe?</h1>
+                <p className='deleting-item-name'>( {deletingItemName} )</p>
+                <div className='delete-yes-no-btn-div'>
+                    <button type="button" className='delete-confirm-yes-button' onClick={onDeleteYesBtn}>Yes</button>
+                    <button type="button" className='delete-confirm-no-button' onClick={onDeleteNoBtn}>No</button>
+                </div>
+            </div>
+        )}
+
+        {/* RECIPES LIST CONTENT   */}
+        <ol className='recipes-list-container'>
+            {searchingRecipe.map(eachName => {
+            const selectedRecipeClass = eachName.id === deletingId ? "recipes-list-items-container_for_select_deleting" : "recipes-list-items-div-container"
+            console.log(selectedRecipeClass) 
+            return ( <li key={eachName.id} className="recipes-list-items-container">
+               <div className={selectedRecipeClass}>
+                <div>
+                  <p className='racipes-items-name'>{eachName.name}</p>
+                  <Link to={`/recipe/${eachName.id}`}>
+                  <button className='recipe-item-dtl-view-button'>Detailed View</button>
+                 </Link>
+                </div>
+               <button type="button" /*onClick={() => handleDeleteRecipe(eachName.id)}*/ 
+              onClick={() => onDeleteButtonClick(eachName.id,eachName.name)}
+              className='delete-recipe-item-button'><MdDeleteForever className='delete-icon' /></button>
+            </div> 
+           </li>)})}
+        </ol>
+    </div>
+  )
+
+// ********************************|| main return ||************************************************************************************
     return (
         <>
         <Header/>
         <div className='recipes-view-bg-container'>
             <div className='recipes-view-content-container'>
-
-                <div className='recipes-list-section-container'>
-                    <div className='recipes-header-and-search-container'>
-                        <h1 className='recipes-list-header'>Recipes List:</h1>
-                        {/*  SEARCH CONTENT */}
-                        <div className='search-icon-input-container'>
-                        <input type='search' value={searchInputValue}
-                        onChange={onSearchInput}
-                         className='search-input'
-                         placeholder='Search Recipe (e.g. Chicken Biryani)'/>
-                         <MdContentPasteSearch className='search-icon' />
-                         </div>
-                    </div>
-                    <hr className='line'/>
-                {/* DELETE CONFORM POPUP */}
-                    {isShownPopup && (
-                        <div className='delete-confirm-popup-container'>
-                            <h1 className='delete-confirm-question'>Are you confirm delete this recipe?</h1>
-                            <p className='deleting-item-name'>( {deletingItemName} )</p>
-                            <div className='delete-yes-no-btn-div'>
-                            <button type="button" className='delete-confirm-yes-button' onClick={onDeleteYesBtn}>Yes</button>
-                            <button type="button" className='delete-confirm-no-button' onClick={onDeleteNoBtn}>No</button>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* RECIPES LIST CONTENT   */}
-                    <ol className='recipes-list-container'>
-
-                        {searchingRecipe.map(eachName => {
-                        const selectedRecipeClass = eachName.id === deletingId ? "recipes-list-items-container_for_del" : "recipes-list-items-div-container"
-                           console.log(selectedRecipeClass) 
-                            return ( <li key={eachName.id} className="recipes-list-items-container">
-                            <div className={selectedRecipeClass}>
-                                <div>
-                            <p className='racipes-items-name'>{eachName.name}</p>
-                            <Link to={`/recipe/${eachName.id}`}>
-                            <button className='recipe-item-dtl-view-button'>Detailed View</button>
-                            </Link>
-                            </div>
-                            <button type="button" /*onClick={() => handleDeleteRecipe(eachName.id)}*/ 
-                            onClick={() => onDeleteButtonClick(eachName.id,eachName.name)}
-                            className='delete-recipe-item-button'><MdDeleteForever className='delete-icon' /></button>
-
-                            </div> 
-                        </li>)})}
-                    </ol>
-
-
-                </div>
-
-
-                   {/* CREATE/ADD RECIPES/FORM CONTENT */}
+                {/*  rendering list views */}
+                {recipesList.length > 0 ? renderNonRecipesListView() : renderEmptyRecipesView()}
+                {/* CREATE/ADD RECIPES/FORM CONTENT */}
                 <div className='recipes-adding-container'>
                     <h1 className='add-recipe-heading'>ADD YOUR RECIPE</h1>
                     <form className='recipe-add-form-container' onSubmit={onSubmitAddForm} >
