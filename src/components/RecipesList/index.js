@@ -82,7 +82,10 @@ const onAddNewRecipeBtn = () => {
 // ON DELETE RECIPE ITEM CONTENT
 const [isShownPopup,setIsShownPopup] = useState(false)
 const [deletingId,setDeletingId] = useState("")
-const onDeleteButtonClick = (id) => {
+const[deletingItemName, setDeletingItemName] = useState("")
+
+const onDeleteButtonClick = (id,name) => {
+    setDeletingItemName(name)
     setIsShownPopup(true)
     setDeletingId(id) 
 }
@@ -123,6 +126,7 @@ const onDeleteYesBtn = () => {
                     {isShownPopup && (
                         <div className='delete-confirm-popup-container'>
                             <h1 className='delete-confirm-question'>Are you confirm delete this recipe?</h1>
+                            <p className='deleting-item-name'>( {deletingItemName} )</p>
                             <div className='delete-yes-no-btn-div'>
                             <button type="button" className='delete-confirm-yes-button' onClick={onDeleteYesBtn}>Yes</button>
                             <button type="button" className='delete-confirm-no-button' onClick={onDeleteNoBtn}>No</button>
@@ -145,7 +149,7 @@ const onDeleteYesBtn = () => {
                             </Link>
                             </div>
                             <button type="button" /*onClick={() => handleDeleteRecipe(eachName.id)}*/ 
-                            onClick={() => onDeleteButtonClick(eachName.id)}
+                            onClick={() => onDeleteButtonClick(eachName.id,eachName.name)}
                             className='delete-recipe-item-button'><MdDeleteForever className='delete-icon' /></button>
 
                             </div> 
