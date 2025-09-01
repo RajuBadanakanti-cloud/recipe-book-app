@@ -7,7 +7,7 @@ import NotFound from './components/NotFound';
 const App = () => (
 <BrowserRouter > {/* This for app github lives with in built routes-# */}
   <Routes>
-    <Route exact path='/' element={<RecipeBookHome/>}/>
+    <Route path='/' element={<RecipeBookHome/>}/>
     <Route exact path='/recipes' element={<RecipesList/>}/>
     <Route exact path='/recipe/:id' element={<RecipeDetailedView/>}/>
     <Route path="/not-found" element={<NotFound/>}/>
