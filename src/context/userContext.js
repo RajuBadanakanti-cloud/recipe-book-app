@@ -207,13 +207,13 @@ const [recipesList, setRecipesList] = useState(() => {
     return stored ? JSON.parse(stored) : userData;
   });
 
-  // ✅ Save recipes to localStorage when they change
+  // Save recipes to localStorage when they change
   useEffect(() => {
     localStorage.setItem("recipes", JSON.stringify(recipesList));
   }, [recipesList]);
 
 
-  // ✅ Run once: initialize localStorage if empty
+  //  Run once: initialize localStorage if empty
   useEffect(() => {
     const stored = localStorage.getItem("recipes");
     if (!stored || JSON.parse(stored).length === 0) {
@@ -222,13 +222,13 @@ const [recipesList, setRecipesList] = useState(() => {
     }
   }, []);
 
-
+// handle the delete recipe on users Action (onclick delete button in RecipesList Component)
   const handleDeleteRecipe = (id) => {
     const updatedRecipesList = recipesList.filter(each => each.id !== id)
     setRecipesList(updatedRecipesList)
     localStorage.setItem("recipes",JSON.stringify(updatedRecipesList))
   }
-    return (<UserContext.Provider value={{recipesList,handleDeleteRecipe,setRecipesList}}>
+    return (<UserContext.Provider value={{recipesList,handleDeleteRecipe,setRecipesList}}> 
         {children}
     </UserContext.Provider>)
 }

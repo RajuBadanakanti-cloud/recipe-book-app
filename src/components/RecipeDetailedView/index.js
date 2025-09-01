@@ -6,12 +6,12 @@ import Header from "../Header"
 import'./index.css'
 
 const RecipeDetailedView = () => {
-    const {recipesList} = useContext(UserContext)
+    const {recipesList} = useContext(UserContext) // We access recipesList From UseContext
     console.log(recipesList)
     const paramId = useParams()
-    const {id} = paramId
+    const {id} = paramId // Id of Recipe
     // RECIPE DETAILS FINDING
-    const recipeDetails = recipesList.find(each => each.id === id)
+    const recipeDetails = recipesList.find(each => each.id === id) // finding the recipe - you want to view
     const {name, imageUrl,ingredients,steps} = recipeDetails
 
     // BACK TO RECIPES LIST BAGE
@@ -26,6 +26,7 @@ const RecipeDetailedView = () => {
             <div className="recipe-detailed-content">
                 <h1 className="recipe-detailed-name">{name}</h1>
                         <div className="recipe-image-view-container">
+                            {/* Recipe (Dish) Image */}
                             <img src={imageUrl} className="recipe-image" alt={name}/>
                         </div>
                         <hr/>
@@ -41,7 +42,8 @@ const RecipeDetailedView = () => {
                         {steps.map(each => <li key={each} className="steps-list-items">{each}</li>)}
                      </ul>
                     </div>
-                     <button type="button" onClick={onRecipesBackButton} className="back-button">Back</button>
+                    {/* Back Button << */}
+                    <button type="button" onClick={onRecipesBackButton} className="back-button">Back</button>
             </div>
         </div>
           

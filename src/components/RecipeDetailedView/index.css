@@ -1,18 +1,21 @@
 /****************************** SMALL DEVICES VIEW  *********************************************** */
 
+/* Main Container */
 .recipe-detailed-bg-container{
     min-height:100vh;
     width:100%;
-    background-image:linear-gradient(to top, #faefb0, #fbd795,#faeaa5); 
+    background-image:linear-gradient(to top, #faefb0, #fbd795,#faeaa5);
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
     margin-top:80px;
 }
+
+/* Recipe Content Card Style */
 .recipe-detailed-content{
     width:75%;
-    background-image:linear-gradient(to bottom, #f6c83f7e, #ecd47f); 
+    background-image:linear-gradient(to bottom, #f6c83f7e, #ecd47f);     
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -25,13 +28,14 @@
     padding-left:30px;
     padding-right:30px;
 }
+/* Recipe Name */
 .recipe-detailed-name{
     font-family:cursive;
     font-size:25px;
     color:#2c291b;
     
 }
-
+/* Recipe image Card */
 .recipe-image-view-container{
     width:100%;
     display:flex;
@@ -40,6 +44,7 @@
     align-items:center;
     margin-bottom:20px;
 }
+/* Recipe Image */
 .recipe-image{
     width:90%;
     border:none;
@@ -76,6 +81,7 @@
     font-family: Helvetica;
     font-size:12px;
 }
+/* Recipe ingredients section title */
 .ingredients-heading{
     font-family:Arial;
     font-size:20px;
@@ -93,14 +99,17 @@
     padding-top:20px;
     padding-bottom:20px;
     padding-left: 20px;
-    padding-right: 40px; 
+    padding-right: 40px;
+   backdrop-filter:blur(80px);
 }
+
 .steps-list-items{
     margin-left:20px;
     margin-bottom:14px;
     font-family: Helvetica;
     font-size:12px;
 }
+/* Recipe Preparation Steps section title */
 .steps-heading{
     font-family:Arial;
     font-size:20px;
@@ -136,6 +145,7 @@
     align-items:center;
     margin-top:100px;
 }
+/* Content Card */
 .recipe-detailed-content{
     width:75%;
     background-image:linear-gradient(to bottom, #f6c83f7e, #ecd47f); 
@@ -151,6 +161,7 @@
     padding-left:40px;
     padding-right: 40px;
 }
+/* Recipe Name */
 .recipe-detailed-name{
     font-family:cursive;
     font-size:40px;
@@ -158,6 +169,7 @@
     
 }
 
+/* Recipe Image Card  */
 .recipe-image-view-container{
     width:100%;
     display:flex;
@@ -166,6 +178,8 @@
     align-items:center;
     margin-bottom:20px;
 }
+
+/* Recipe Image */
 .recipe-image{
     width:100%;
     border:none;
@@ -202,6 +216,7 @@
     font-family: Helvetica;
     font-size:16px;
 }
+/* Recipe Ingredinets section title */
 .ingredients-heading{
     font-family:Arial;
     font-size:26px;
@@ -227,6 +242,7 @@
     font-family: Helvetica;
     font-size:16px;
 }
+/* Recipe Preparation Steps section title */
 .steps-heading{
     font-family:Arial;
     font-size:28px;

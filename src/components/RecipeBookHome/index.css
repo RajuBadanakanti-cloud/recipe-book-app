@@ -15,8 +15,9 @@
     justify-content:center;
     align-items:center;
 }
+/*  Card Content */
 .home-recipe-content-container{
-    background-color: #035327d4;
+    background-color:#ffcf7dad;
     min-height:300px;
     width:85%;
     display:flex;
@@ -28,9 +29,10 @@
     border:none;
     border-radius:10px;
     text-align:center;
+    backdrop-filter: blur(10px);
 }
 
-/* VIEW RECIPES BUTTON */
+/* View Button >> */
 .view-recipes-button{
     height:40px;
     width:120px;
@@ -41,7 +43,7 @@
     cursor: pointer;
     padding:5px;
     margin-top:20px;
-    font-family:cursive;
+    font-family:Roboto;
     font-size:12px;
     font-weight:bold;
     outline: none;
@@ -49,35 +51,47 @@
     transform: background-color 0.3 ease;
 }
 .view-recipes-button:hover{
-    background-color: #ffa200;
+   background-color:#ff8800;
 }
 
+/* Website-logo */
 .home-website-logo-img{
     width:55%;
 }
+/* Heading*/
 .home-heading{
-    color:#ffffff;
+    color: #fdf4f4;
     font-size:22px;
-    font-family:Arial;
+    font-family:Roboto;
+    font-weight:bold;
 }
 .home-heading-span-text{
-    color:#fdd985;;
+    color:rgb(214, 19, 19);
 }
+/* tag-line */
 .home-paras-description{
-    color:#f8f5c1;
+    color: #602532;
+    font-family:Roboto;
     font-size:10px;
+    font-weight:bold;
+    letter-spacing:1.2px;
+    margin:0;
+    margin-bottom:20px;
 }
 
+/* description */
 .home-description{
-    color:#ffffff;
+    width:96%;
+    color: #035327;
     font-size:12px;
+    line-height:1.4;
 }
 
 /******************************  MEDIUM/LARGE DEVICES VIEW  *********************************************** */
 
-@media screen and (min-width:760px){
+@media screen and (min-width:768px){
 .home-recipe-book-bg-container{
-    min-height:110vh;
+    min-height:100vh;
     width:100%;
     background-image:url("https://res.cloudinary.com/dnh9hnjbx/image/upload/v1751964316/Rj_food_login_page_ChatGPT_Image_Jul_8_2025_02_13_20_PM_qurhj8.png");
     background-size:cover;
@@ -87,9 +101,9 @@
     justify-content:center;
     align-items:flex-end;
 }
+/*  Card Content */
 .home-recipe-content-container{
-    background-color:#f9f5f5;
-    background-color: #035327;
+    background-color:#ffcf7dad;
     width:45%;
     display:flex;
     flex-direction:column;
@@ -97,14 +111,16 @@
     align-items:center;
     margin-right:40px;
     min-height:300px;
-    padding-top:20px;
+    padding-top:10px;
     padding-left:25px;
     padding-right:25px;
     padding-bottom:30px;
-    border:none;
-    border-radius:10px;
     text-align:center;
+    border-radius:10px;
+    backdrop-filter: blur(30px); /* Blur the background */
+
 }
+/* View Button >> */
 .view-recipes-button{
     height:45px;
     width:140px;
@@ -115,34 +131,48 @@
     cursor: pointer;
     padding:5px;
     margin-top:20px;
-    font-family:cursive;
+    font-family:Roboto;
     font-size:14px;
     font-weight:bold;
     outline: none;
-     margin-bottom:30px;
+    margin-bottom:30px;
 }
+/* Website-logo */
 .home-website-logo-img{
     width:60%;
     border-radius:10px;
 }
+
+/* Heading*/
 .home-heading{
-    color:#ffffff;
-    font-size:28px;
-    font-family:Arial;
-
+    color: #fdf4f4;
+    font-size:30px;
+    font-family:Roboto;
+    font-weight:bolder;
+    margin-top:-30px;
 }
+
+/* span */
 .home-heading-span-text{
-    color:#fdd985;;
+    color:rgb(214, 19, 19);
 }
+/* tag-line */
 .home-paras-description{
-    color:#f8f5c1;
+    color: #602532;
+    font-family:Roboto;
     font-size:14px;
+    font-weight:bold;
+    letter-spacing:1.2px;
+    margin:0;
+    margin-bottom:20px;
 }
 
+/* description */
 .home-description{
-     width:95%;
-    color:#ffffff;
+    width:95%;
+    color: #035327;
     font-size:14px;
+    line-height:1.6;
 }
 
 }

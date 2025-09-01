@@ -13,6 +13,7 @@
     justify-content:flex-start;
     align-items:flex-start;
 }
+/* Content Container */
 .recipes-view-content-container{
     background: linear-gradient(to right, #f7ec97, #d9a24a);
     min-height:100vh;
@@ -66,6 +67,7 @@
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size:18px;
 }
+/* Search Content >> */
 .search-icon-input-container{
     height:40px;
     width:80%;
@@ -142,6 +144,7 @@ hr{
     height:65px;
     width:80%;
 }
+/*  div container it in <li> */
 .recipes-list-items-div-container{
     height:65px;
     width:100%;
@@ -157,6 +160,11 @@ hr{
     padding:5px 15px;
 
 }
+/*  Link >> */
+.link-to-view{
+    text-decoration: none;
+}
+/*  Recipe Name in card */
 .racipes-items-name{
     color:#252701;
     font-size:15px;
@@ -164,6 +172,7 @@ hr{
     margin:0;
     margin-bottom:4px;
 }
+/*  detailed View Button in card */
 .recipe-item-dtl-view-button{
     height:20px;
     width:80px;
@@ -179,6 +188,7 @@ hr{
 box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43, 0.522);
 
 }
+/*  delete recipe Button in card */
 .delete-recipe-item-button{
     border:none;
     background-color:transparent;
@@ -215,6 +225,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     padding:10px;
 
 }
+/* Add recipes content - Heading */
 .add-recipe-heading{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size:18px;
@@ -235,6 +246,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     font-weight:500;
     margin-bottom:10px;
 }
+/* New Recipe Name for adding */
 .new-recipe-name-input{
     height:25px;
     width:95%;
@@ -247,10 +259,12 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     font-size:12px;
     line-height:22px;
 }
+/* Ingredients */
 .new-recipe-ingredients{
     font-size:16px;
     font-weight:500;
 }
+
 .new-recipe-ingredients-textarea{
     width:95%;
     border:none;
@@ -265,6 +279,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     font-size:12px;
     line-height:24px;
 }
+/* Preparation Steps via textarea */
 .new-recipe-steps-textarea{
     width:95%;
     border:none;
@@ -279,6 +294,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     font-size:12px;
     line-height:24px;
 }
+/* dish image Url Style */
 .new-recipes-img-url{
     height:25px;
     width:95%;
@@ -309,6 +325,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
 .add-new-recipe-button:hover{
     background-color: #3b0202;
 }
+/* Submit Form Button Style */
 .new-recipe-submit-button{
     height:30px;
     width:100%;
@@ -327,6 +344,11 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     justify-content:center;
     align-items:center;
 }
+.new-recipe-submit-button:hover{
+    background-image:linear-gradient( to bottom,#ffaa00, #ab5702);
+}
+
+
 /* DELETE CONFORM POPUP CONTENT  */
 .delete-confirm-popup-container{
     position:fixed;
@@ -359,6 +381,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
 .delete-confirm-question{
     font-size:15px;
 }
+
 .delete-yes-no-btn-div{
     display:flex;
     flex-direction:row;
@@ -366,6 +389,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     align-items:center;
     margin-top:10px;
 }
+/* Delete Confirmation Button - YES */
 .delete-confirm-yes-button{
     height:30px;
     width:72px;
@@ -380,8 +404,9 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     transition: box-shadow 0.3 ease;
 }
 .delete-confirm-yes-button:hover{
- box-shadow: 0 2px 8px 0 rgba(246, 4, 4, 0.301), 0 6px 16px 0 rgba(236, 4, 4, 0.181);
+ box-shadow: 0 2px 6px 0 rgba(246, 4, 4, 0.301), 0 6px 16px 0 rgba(236, 4, 4, 0.181);
 }
+/* Delete Confirmation Button - NO */
 .delete-confirm-no-button{
     height:30px;
     width:72px;
@@ -397,7 +422,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(253, 232, 43
     transition:box-shadow 0.3 ease;
 }
 .delete-confirm-no-button:hover{
- box-shadow: 0 2px 8px 0 rgba(78, 5, 213, 0.274), 0 6px 16px 0 rgba(23, 6, 136, 0.312);
+ box-shadow: 0 2px 6px 0 rgba(78, 5, 213, 0.274), 0 6px 16px 0 rgba(23, 6, 136, 0.312);
 }
 
 
@@ -461,6 +486,7 @@ text-align:center;
     color:#440202;
 
 }
+/* Search Content >> */
 .search-icon-input-container{
     height:42px;
     width:60%;
@@ -516,6 +542,7 @@ hr{
     overflow-x: auto;
 
 }
+/* if you select for deleting this style apply for the respective div >> */
 .recipes-list-items-container_for_select_deleting{
     height:85px;
     width:100%;
@@ -541,6 +568,7 @@ hr{
     height:70px;
     width:85%;
 }
+/* div in li */
 .recipes-list-items-div-container{
     height:85px;
     width:100%;
@@ -552,9 +580,12 @@ hr{
     background-color:#ffffff;
     padding-left:20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.125), 0 6px 16px 0 rgba(0, 0, 0, 0.293);
-    border: none;
     border-radius:10px;
 
+}
+/* Link  */
+.link-to-view{
+    text-decoration: none;
 }
 .racipes-items-name{
     color:#252701;
@@ -563,6 +594,7 @@ hr{
     margin:0;
     margin-bottom:6px;
 }
+/* Recipe Detailed View Button  */
 .recipe-item-dtl-view-button{
     height:22px;
     width:88px;
@@ -578,13 +610,15 @@ hr{
 box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5, 0.522);
 
 }
+
+/* Recipe Detailed View Button  */
 .delete-recipe-item-button{
     border:none;
     background-color:transparent;
     cursor: pointer;
     margin-right:20px;
 }
-
+/* delete Icon */
 .delete-icon{
     height:20px;
     width:20px;
@@ -628,6 +662,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
     justify-content:center;
     align-items:flex-start;
 }
+/* Adding new Recipe Name  */
 .new-recipes-labels{
     font-size:18px;
     font-weight:500;
@@ -645,6 +680,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
     font-size:14px;
     line-height:24px;
 }
+/* Adding new Recipe Ingredients */
 .new-recipe-ingredients{
     font-size:18px;
     font-weight:500;
@@ -662,6 +698,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
     font-size:15px;
     line-height:24px;
 }
+/* Adding new Recipe Preparation Steps */
 .new-recipe-steps-textarea{
     width:95%;
     border:none;
@@ -676,6 +713,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
     font-size:15px;
     line-height:24px;
 }
+/* Your Dish Image Style  */
 .new-recipes-img-url{
     height:30px;
     width:95%;
@@ -705,6 +743,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
 .add-new-recipe-button:hover{
     background-color: #3b0202;
 }
+/* Form Submit Button  */
 .new-recipe-submit-button{
     height:40px;
     width:100%;
@@ -746,7 +785,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
     margin:0;
     margin-bottom:30px;
 }
-
+/* delete confirm Question - text */
 .delete-confirm-question{
     font-size:18px;
 }
@@ -757,6 +796,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
     align-items:center;
     margin-top:10px;
 }
+/* delete confirmation Button -YES */
 .delete-confirm-yes-button{
     height:30px;
     width:74px;
@@ -773,6 +813,7 @@ box-shadow: 0 2px 8px 0 rgba(246, 210, 3, 0.511), 0 6px 16px 0 rgba(245, 221, 5,
 .delete-confirm-yes-button:hover{
  box-shadow: 0 2px 8px 0 rgba(246, 4, 4, 0.503), 0 6px 16px 0 rgba(236, 4, 4, 0.503);
 }
+/* delete confirmation Button - NO */
 .delete-confirm-no-button{
     height:30px;
     width:74px;
